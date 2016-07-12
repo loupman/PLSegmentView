@@ -237,7 +237,7 @@
 //    
 //    CGFloat originX = CGRectGetWidth(scrollView.frame) * ratio;
 //    CGRect frame = _lineview.frame;
-//    frame = (CGRect){{originX + 10,frame.origin.y}, frame.size};
+//    frame = (CGRect){{originX + 10, frame.origin.y}, frame.size};
 //    
 //    [_lineview setFrame:frame];
 }
