@@ -25,11 +25,12 @@
     [super viewDidLoad];
     
     _segmentView = [[PLSegmentView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 42)];
-    _segmentView.botLineColor = [UIColor orangeColor];
+    _segmentView.bottomLineColor = [UIColor orangeColor];
     _segmentView.titleFont = [UIFont systemFontOfSize:14];
     _segmentView.selectedTitleColor = [UIColor blackColor];
     _segmentView.titleColor = [UIColor grayColor];
-    [_segmentView setSegmentsData:@[@"title0", @"title1", @"title2", @"title3", @"title4", @"title5", @"title6"] fixWidth:80];
+    [_segmentView setSegmentsData:@[@"title0", @"title1", @"title2", @"title3", @"title4", @"title5",
+                                    @"title6", @"title7", @"title8", @"title9"] fixWidth:80];
     
     __weak __typeof(&*self)weakSelf = self;
     _segmentView.didTouchTheTitleWithTag = ^(NSInteger tag){

@@ -17,7 +17,7 @@
 /**
  *  subline color on bottom of title.
  */
-@property (strong, nonatomic) UIColor *botLineColor;
+@property (strong, nonatomic) UIColor *bottomLineColor;
 
 /**
  *  title font  default is font12

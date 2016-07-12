@@ -131,7 +131,7 @@
     UIButton *firstOne = _buttons[0];
     _lineview = [[UIView alloc] initWithFrame:CGRectMake(kSubLineMarginLeft, selfHeight - 2,
                                                          firstOne.bounds.size.width - kSubLineMarginLeft*2, 2)];
-    [_lineview setBackgroundColor:_botLineColor?:[UIColor redColor]];
+    [_lineview setBackgroundColor:_bottomLineColor?:[UIColor redColor]];
 
     CGFloat scrollWidth = lastTotalWidth;
     if (scrollWidth < self.frame.size.width) {
@@ -171,20 +171,19 @@
     CGFloat selfWidth = CGRectGetWidth(_bgScrollView.frame);
     CGFloat contentWidth = _bgScrollView.contentSize.width;
     
-    
     if ((point.x + btnHalfWidth) > selfWidth/2) {
         // 向前移动，判断后面是否到头了
         posx = button.frame.origin.x- selfWidth/2 + btnHalfWidth;
-        if ((posx + selfWidth + 0.2) > _bgScrollView.contentSize.width) {
+        if ((posx + selfWidth + 0.1) > _bgScrollView.contentSize.width) {
             posx = contentWidth - selfWidth;
         }
     } else {
         // 向后移动，判断前面是否到头了。
         posx = button.frame.origin.x - (selfWidth/2 - point.x) + btnHalfWidth;
         
-        if (posx <= 0.2) {
+        if (posx <= 0.1 || (fabs(button.frame.origin.x-point.x)<=0.1)) {
             posx = 0;
-        } else if ((posx + selfWidth + 0.2) > _bgScrollView.contentSize.width) {
+        } else if ((posx + selfWidth + 0.1) > _bgScrollView.contentSize.width) {
             // 向后移动，判断移动button移动到中心位置后，是否前面到头了。
             posx = contentWidth - selfWidth;
         }
